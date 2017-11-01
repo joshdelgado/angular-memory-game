@@ -1,0 +1,64 @@
+.card{
+    -webkit-perspective: 1000px;
+            perspective: 1000px;
+	-webkit-transform-style: preserve-3d;
+	        transform-style: preserve-3d;
+	position: relative;
+    height:200px;
+    width:140px;
+    cursor: pointer;
+}
+.card__back,
+.card__front{
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: inherit;
+    width: inherit;
+    padding:2px;
+    text-align: center;
+    -webkit-transition: all 0.6s ease;
+    transition: all 0.6s ease;
+}
+/* front pane, placed above back */
+.card__back {
+	z-index: 2;
+	-webkit-transform: rotateX(0deg) rotateY(0deg);
+	        transform: rotateX(0deg) rotateY(0deg);
+    background: #ef32d9;
+    background: -webkit-linear-gradient(to top, #89fffd, #ef32d9);
+    background: linear-gradient(to top, #89fffd, #ef32d9);
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+/* back, initially hidden pane */
+.card__front {
+	-webkit-transform: rotateY(-180deg);
+	        transform: rotateY(-180deg);
+    background: #ece9e6;
+    background: -webkit-linear-gradient(to top, #ece9e6, #ffffff);
+    background: linear-gradient(to top, #ece9e6, #ffffff);
+    background: #ef32d9;
+    background: -webkit-linear-gradient(to top, #89fffd, #ef32d9);
+    background: linear-gradient(to top, #89fffd, #ef32d9);
+}
+.card__front span,
+.card__back span{
+    line-height: 200px;
+    display: block;
+    background: #fff;
+    height:100%;
+    width:100%;
+}
+.card:hover .card__front{
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+            transform: rotateX(0deg) rotateY(0deg);
+    box-shadow: 1px 4px 5px rgba(0,0,0,0.2);
+}
+.card:hover .card__back{
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+    background-color: #eee;
+    box-shadow: none;
+}
