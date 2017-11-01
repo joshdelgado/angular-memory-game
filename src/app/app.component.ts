@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'WelcomeLand';
+  title:string;
+  cards:string[];
+
+  ngOnInit(){
+      this.title = 'WelcomeLand';
+      this.cards = ['rock', 'paper', 'scissors', 'shoot'];
+  }
 }

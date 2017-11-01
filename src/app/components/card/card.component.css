@@ -6,6 +6,9 @@
 	position: relative;
     height:200px;
     width:140px;
+    margin: 10px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
     cursor: pointer;
 }
 .card__back,
@@ -19,8 +22,8 @@
     width: inherit;
     padding:2px;
     text-align: center;
-    -webkit-transition: all 0.6s ease;
-    transition: all 0.6s ease;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 /* front pane, placed above back */
 .card__back {
@@ -51,14 +54,22 @@
     height:100%;
     width:100%;
 }
-.card:hover .card__front{
+.card:hover .card__front,
+.card.selected .card__front{
     -webkit-transform: rotateX(0deg) rotateY(0deg);
             transform: rotateX(0deg) rotateY(0deg);
-    box-shadow: 1px 4px 5px rgba(0,0,0,0.2);
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
 }
-.card:hover .card__back{
+.card:hover .card__back,
+.card.selected .card__back{
     -webkit-transform: rotateY(180deg);
             transform: rotateY(180deg);
     background-color: #eee;
     box-shadow: none;
+}
+.card.selected{
+    transform: translateY(-2px);
+}
+.card.selected .card__front{
+    box-shadow: 1px 4px 5px rgba(0,0,0,0.3);
 }

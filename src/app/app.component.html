@@ -1,4 +1,6 @@
-<div style="text-align:center">
+<header>
   <h1>Welcome to {{title}}!</h1>
-</div>
-<app-card></app-card>
+</header>
+<main>
+    <cards [init]='cards' class="container flex"></cards>
+</main>
